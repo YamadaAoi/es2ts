@@ -1,12 +1,4 @@
-# es2ts
-
-将 Elasticsearch 数据类型转换为 typescript 接口，方便开发
-
-使用 Elasticsearch 的\_mapping 功能获取索引内所有字段信息，递归生成对应的 interface
-
-类型转换规则如下，不常用的类型、未覆盖到的类型转换为 any
-
-```js
+export const esDataType: any = {
   // 文本类型
   text: "string",
   // 关键字类型
@@ -40,4 +32,4 @@
   ip: "any",
   // 计数数据类型
   token_count: "any"
-```
+};
