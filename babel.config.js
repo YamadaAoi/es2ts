@@ -1,13 +1,26 @@
-module.exports = {
-  presets: ["react-app"],
-  plugins: [
+module.exports = function(api) {
+  api.cache(true);
+  const presets = [
     [
-      "import",
+      "@babel/preset-env",
       {
-        libraryName: "antd",
-        libraryDirectory: "es",
-        style: "css"
-      }
-    ]
-  ]
+        targets: {
+          browsers: ["> 1%", "last 4 versions", "not ie <= 8"],
+        },
+      },
+    ],
+  ];
+  return {
+    presets,
+    plugins: [
+      [
+        "import",
+        {
+          libraryName: "antd",
+          libraryDirectory: "es",
+          style: "css",
+        },
+      ],
+    ],
+  };
 };

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Input, Select, Button, message } from "antd";
 import * as es2tsApi from "../api/es2tsApi";
 import "../styles/query.less";
@@ -17,7 +17,7 @@ export default function Query(props: QueryProps) {
   const [url, setUrl] = useState<string>("");
   const [indexList, setIndexList] = useState<string[]>([]);
 
-  useEffect(() => {
+  const refreshIndexList = () => {
     if (protocol && host) {
       setDisable(true);
       es2tsApi
@@ -46,7 +46,7 @@ export default function Query(props: QueryProps) {
       setUrl("");
       setIndexList([]);
     }
-  }, [protocol, host]);
+  };
 
   const resetIndexList = (indices: any) => {
     let list: string[] = [];
@@ -120,6 +120,7 @@ export default function Query(props: QueryProps) {
             value={host}
             allowClear={true}
             placeholder="请输入地址"
+            onBlur={refreshIndexList}
             onChange={changeUrl}
           />
         </div>

@@ -1,6 +1,6 @@
 # es2ts
 
-将 Elasticsearch 数据类型转换为 typescript 接口，方便开发
+一款简单的 chrome extension,用于将 Elasticsearch 数据类型转换为 typescript 接口，方便开发
 
 使用 Elasticsearch 的\_mapping 功能获取索引内所有字段信息，递归生成对应的 interface
 

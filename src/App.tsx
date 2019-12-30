@@ -6,7 +6,7 @@ import { DisplayData } from "./api/es2tsApi";
 
 import "./styles/app.less";
 
-function App() {
+export default function App() {
   const [resp, setResp] = useState<any>({});
   const [indexName, setIndexName] = useState<string>("");
 
@@ -29,5 +29,3 @@ function App() {
     </div>
   );
 }
-
-export default App;
